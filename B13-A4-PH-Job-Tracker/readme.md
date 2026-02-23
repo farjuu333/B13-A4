@@ -39,3 +39,16 @@ Core Mechanics
 The Path: Target → Parent → Grandparent → Document → Window.
 Default State: It is the standard behavior for most events ( click, submit, and keydown).
 The "Stop" Switch: You can kill the bubble using event.stopPropagation(). This prevents parent handlers from firing.
+
+4. What is Event Delegation in JavaScript? Why is it useful?
+ANSWER::
+
+Event Delegation is a technique where you attach a single event listener to a parent element instead of adding multiple listeners to its children. It relies on Event Bubbling to "catch" events as they travel up the DOM tree.
+How It Works
+The Click: A user clicks a child element (a <li> or <button>).
+The Bubble: The event bubbles up from that child to its parent.
+The Catch: The parent’s listener triggers.  use event.target to identify exactly which child was clicked and perform the action.
+Why Is It Useful?
+Memory Efficiency: Adding 1,000 listeners to 1,000 list items slows down the browser. One listener on the parent uses significantly less memory.
+Dynamic Elements: If  add a new button to the list via JavaScript, it automatically works with the parent listener.  don't need to manually bind a new listener to it.
+Cleaner Code:  manage  logic in one central place instead of scattering handlers across the DOM.
