@@ -51,4 +51,20 @@ The Catch: The parent’s listener triggers.  use event.target to identify exact
 Why Is It Useful?
 Memory Efficiency: Adding 1,000 listeners to 1,000 list items slows down the browser. One listener on the parent uses significantly less memory.
 Dynamic Elements: If  add a new button to the list via JavaScript, it automatically works with the parent listener.  don't need to manually bind a new listener to it.
-Cleaner Code:  manage  logic in one central place instead of scattering handlers across the DOM.
+Cleaner Code:  manage  logic in one central place instead of scattering handlers across the DOM
+
+5. What is the difference between preventDefault() and stopPropagation() methods?
+ANSWER::
+
+1. event.preventDefault()
+This stops the browser's default behavior for an element. It does not stop the event from bubbling up the DOM.
+What it does: Prevents the "natural" thing that usually happens.
+Common Use Cases:
+Stopping a form from submitting and refreshing the page.
+Stopping a link (<a>) from navigating to a new URL.
+Stopping a checkbox from being checked.
+2. event.stopPropagation()
+This stops the event from bubbling up the DOM tree. It prevents parent elements from "hearing" the event.
+What it does: Cuts off the signal so it doesn't reach the ancestors.
+Common Use Case:
+Clicking a "Delete" button inside a clickable "Card" component without triggering the card's own click event.
