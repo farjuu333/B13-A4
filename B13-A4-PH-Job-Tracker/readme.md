@@ -31,3 +31,11 @@ Create: Use document.createElement("tag") to create a new element in memory.
 Configure: Add content using textContent and set attributes ( ID or Class) using setAttribute().
 Locate Parent: Use getElementById() or querySelector() to find the existing element that will contain the new one.
 Insert: Use appendChild() to add it as the last child, or prepend() to add it as the first child of the parent.
+
+3. What is Event Bubbling? And how does it work?
+ANSWER::
+Event Bubbling is a mechanism where an event starts at the most specific element (the target) and flows upwards through its parents until it reaches the window object.
+Core Mechanics
+The Path: Target → Parent → Grandparent → Document → Window.
+Default State: It is the standard behavior for most events ( click, submit, and keydown).
+The "Stop" Switch: You can kill the bubble using event.stopPropagation(). This prevents parent handlers from firing.
