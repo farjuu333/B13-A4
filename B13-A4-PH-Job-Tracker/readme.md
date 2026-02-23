@@ -23,3 +23,11 @@ Purpose: Grabs all elements that match the specified CSS selector.
 Syntax: document.querySelectorAll(".my-class");
 Return Value: Returns a static NodeList.
 Advantage: You can use the .forEach() method directly on a NodeList.
+
+2. How do you create and insert a new element into the DOM?
+
+ANSWER::
+Create: Use document.createElement("tag") to create a new element in memory.
+Configure: Add content using textContent and set attributes ( ID or Class) using setAttribute().
+Locate Parent: Use getElementById() or querySelector() to find the existing element that will contain the new one.
+Insert: Use appendChild() to add it as the last child, or prepend() to add it as the first child of the parent.
