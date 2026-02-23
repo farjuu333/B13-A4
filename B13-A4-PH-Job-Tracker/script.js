@@ -60,6 +60,18 @@ function toggleStyle(id) {
             }
         }
     });
+//  new add korlam katbo
+const jobsCountText = document.getElementById('8-jobs');
+    if (jobsCountText) {
+        if (id === 'all-filter-btn') {
+            jobsCountText.innerText = `${allCards.length} jobs`;
+        } else {
+            // 0 of 8 jobs
+            jobsCountText.innerText = `${visibleCount} of ${allCards.length} jobs`;
+        }
+    }
+
+
     // add 
     const existingMsg = document.getElementById('no-jobs-msg');
     
